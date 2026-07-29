@@ -1,0 +1,16 @@
+import canonicalLaneMathlib.AdmissibleClass
+import ChemicalKineticsThermodynamicsHeatTransferLemmaCanonicalLaneLean.BridgeLemmas
+import ChemicalKineticsThermodynamicsHeatTransferLemmaCanonicalLaneLean.GateLemmas
+
+namespace HautevilleHouse
+namespace ChemicalKineticsThermodynamicsHeatTransferLemmaCanonicalLaneLean
+
+def ConstrainedChemicalKineticsThermodynamicsHeatTransferClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_chemical_kinetics_thermodynamics_heat_transfer_endgame (A : AdmissibleClass) :
+    ConstrainedChemicalKineticsThermodynamicsHeatTransferClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end ChemicalKineticsThermodynamicsHeatTransferLemmaCanonicalLaneLean
+end HautevilleHouse
